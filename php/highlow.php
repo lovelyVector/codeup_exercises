@@ -28,7 +28,7 @@ fwrite(STDOUT, "**********************\n");
 
 fwrite(STDOUT, "Try and guess the number that I am thinking of... \n-->");
 
-$theNumberToGuess = mt_rand(1,100);
+$theNumberToGuess = mt_rand($argv[1],$argv[1]);
 
 
 while ($isGameRunning) {
