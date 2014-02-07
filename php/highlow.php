@@ -22,38 +22,41 @@ $isGameRunning = True;
 $numberOfGuesses = 0;
 
 
-fwrite(STDOUT, "**********************\n");
-fwrite(STDOUT, "** Welcome to Hi-lo **\n");
-fwrite(STDOUT, "**********************\n");
-
-fwrite(STDOUT, "Try and guess the number that I am thinking of... \n-->");
-
 if($argc != 3){
-	fwrite(STDOUT, "Please enter the correct number of arguments.");
+	fwrite(STDOUT, "Please enter the correct number of arguments.\n");
 	exit(0);
 }
 
 $minValue = $argv[1];
 $maxValue = $argv[2];
 
-if(!is_int($minValue)){
-	fwrite(STDOUT, "Please enter a minimum value that is an integer.");
+if(!is_numeric($minValue)){
+	fwrite(STDOUT, "Please enter a minimum value that is an integer.\n");
 	exit(0);
 }
 
-if(!is_int($maxValue)){
-	fwrite(STDOUT, "Please enter a maximum value that is an interger.");
+if(!is_numeric($maxValue)){
+	fwrite(STDOUT, "Please enter a maximum value that is an interger.\n");
 	exit(0);
 }
 
 // This is a check to see if the minimum value is less than the maximum
-if(minValue >= maxValue){
-	fwrite(STDOUT, "Please enter a minimum value that is less than the maximum value.");
+if($minValue >= $maxValue){
+	fwrite(STDOUT, "Please enter a minimum value that is less than the maximum value.\n");
 	exit(0);
 
 }
 
-$theNumberToGuess = mt_rand($argv[1],$argv[1]);
+
+fwrite(STDOUT, "**********************\n");
+fwrite(STDOUT, "** Welcome to Hi-lo **\n");
+fwrite(STDOUT, "**********************\n");
+
+fwrite(STDOUT, "Try and guess the number that I am thinking of... \n-->");
+
+
+
+$theNumberToGuess = mt_rand($argv[1],$argv[2]);
 
 
 
