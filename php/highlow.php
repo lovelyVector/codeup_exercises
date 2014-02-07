@@ -6,6 +6,10 @@
  * A simple game that guesses numbers and is able to take user input.
  *
  * The game will ask the player for there name.
+ * Then the game will pick a random number.
+ * The player will be prompted to guess the number.
+ * If the user guesses incorrectly the programm will give the user a hint.
+ *
  *
  * @author Alexander A Guerra <lovelyVector@gmail.com>
  * @version 0.0.1
