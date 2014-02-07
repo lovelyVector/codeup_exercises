@@ -9,21 +9,45 @@
  *
  * @author Alexander A Guerra <lovelyVector@gmail.com>
  * @version 0.0.1
- * @copyright lovelyVector 2014
+ * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  */
+
+
+
+$isGameRunning = True;
+$numberOfGuesses = 0;
 
 
 fwrite(STDOUT, "**********************\n");
 fwrite(STDOUT, "** Welcome to Hi-lo **\n");
 fwrite(STDOUT, "**********************\n");
 
+fwrite(STDOUT, "Try and guess the number that I am thinking of... \n-->");
+
+$theNumberToGuess = mt_rand(1,100);
 
 
-fwrite(STDOUT, 'What is your first name? ');
+while ($isGameRunning) {
+	$valueOfGuess = fgets(STDOUT);
+	++$numberOfGuesses;
 
+	if ($valueOfGuess == $theNumberToGuess) {
 
-$first_name = fgets(STDIN);
+		$isGameRunning = False;
+		fwrite(STDOUT, "You won!\n");
+		fwrite(STDOUT, "And you did it in $numberOfGuesses guesses\n");
 
-fwrite(STDOUT, "Hello $first_name");
+		exit(0);
+	}
+	else{
+
+		if($valueOfGuess <= $theNumberToGuess){
+			fwrite(STDOUT, "Try again. You guessed to low.\n-->");
+		}
+		else{
+			fwrite(STDOUT, "Try again. You guessed to high.\n-->");
+		}
+	}
+}
 
 ?>
