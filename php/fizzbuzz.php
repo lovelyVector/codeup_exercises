@@ -11,5 +11,8 @@
  * @version 0.0.1
  */
 
+//	The minumum and maximum numbers that the fizzbuzz program will check.
+$minNumber = 1;
+$maxNumber = 100;
 
 ?>
