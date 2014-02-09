@@ -17,7 +17,22 @@ $minNumber = fgets(STDOUT);
 fwrite(STDOUT, "Please enter a number.\n");
 $maxNumber = fgets(STDOUT);
 
+// Now that I have two numbers what needs to be checked?
+// I need to check that both numbers are not the same.
+// What happens if the minimum number is greater than the maximum number?
+// Should it give an error or count backwords?
+
+// At this point I am generating an infinite loop...I think it's because I am using a string as my minNumber.
+// I should probably cast it to an int.
 
 
+// I am not usre if this is the right way for me to approch the whole problem.
+// But I willl keep on moving on...That is the only way for me to go. Forward...
+// 
+
+for ($i=$minNumber; $i < $maxNumber; $i++)
+{ 
+	echo "{$i}\n";
+}
 
 ?>

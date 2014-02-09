@@ -16,7 +16,6 @@
  * @version 0.0.1
  */
 
-
-// It's at this point that I am going to commit.
-// 
+// I should be able to write the fizzbuzz program
+// What is the fizzbuzz program?
 ?>
