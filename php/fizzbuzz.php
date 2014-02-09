@@ -15,4 +15,26 @@
 $minNumber = 1;
 $maxNumber = 100;
 
+// This for loop will print out the numbers 1-100.
+// The test condition is "<=" because we want it to include the number 100
+for ($i=$minNumber; $i <= $maxNumber; $i++) { 
+
+
+	if ($i%3 == 0 && $i%5 ==0) 
+	{
+		echo "FizzBuzz\n";
+	}
+	elseif ($i%3 == 0) 
+	{
+		echo "Fizz\n";
+	}
+	elseif ($i%5 == 0) {
+		echo "Buzz\n";
+	}
+	else
+	{
+		echo "$i\n";
+	}
+	
+}
 ?>
