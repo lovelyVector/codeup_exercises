@@ -19,18 +19,21 @@ $maxNumber = 100;
 // The test condition is "<=" because we want it to include the number 100
 for ($i=$minNumber; $i <= $maxNumber; $i++) { 
 
-
+	//	Test for divisibility by 3 and 5
 	if ($i%3 == 0 && $i%5 ==0) 
 	{
 		echo "FizzBuzz\n";
 	}
+	//	Test for divisiblity by 3
 	elseif ($i%3 == 0) 
 	{
 		echo "Fizz\n";
 	}
+	// Test for divisiblity by 5
 	elseif ($i%5 == 0) {
 		echo "Buzz\n";
 	}
+	// Prints the number if not divisible by 3 and 5, 3 or 5
 	else
 	{
 		echo "$i\n";
