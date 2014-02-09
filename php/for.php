@@ -9,9 +9,15 @@
  * @version 0.0.1
  */
 
-// Prompt the user for a starting number and store the response in minNumber.
+// Prompt the user for a starting number and store the response in $minNumber.
 fwrite(STDOUT, "Please enter a number.\n");
 $minNumber = fgets(STDOUT);
+
+// Prompt the user for an ending number and store the response in $maxNumber.
+fwrite(STDOUT, "Please enter a number.\n");
+$maxNumber = fgets(STDOUT);
+
+
 
 
 ?>
