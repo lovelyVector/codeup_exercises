@@ -35,14 +35,22 @@ foreach ($things as $thing) {
 	// }
 	// 
 	// 
-	if (is_scalar($thing)) {
-		echo "$thing\n";
+	// 
+	// 
+	// if (is_scalar($thing)) {
+	// 	echo "$thing\n";
 
-		if (is_bool($thing)) {
-			echo var_dump($thing);
-		}
+	// 	if (is_bool($thing)) {
+	// 		echo var_dump($thing);
+	// 	}
+	// }
+
+	if (is_array($thing)) {
+		echo "Array\n";
 	}
-
+	else{
+		echo "$thing \n";
+	}
 
 
 }
