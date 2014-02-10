@@ -11,6 +11,13 @@
  * @version 0.0.1
  */
 
+/**
+ * I belong to a class
+ */
+class Def
+{
+}
+
 //	The minumum and maximum numbers that the fizzbuzz program will check.
 $minNumber = 1;
 $maxNumber = 100;
