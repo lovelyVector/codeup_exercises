@@ -107,7 +107,13 @@ function divide($a = null, $b = null) {
 		# code...
 	}
 	else{
-		echo $a / $b;
+		if ($b = 0) {
+			echo "You are deviding by zero";
+		}
+		else{
+			echo $a / $b;
+		}
+		
 	}
 }
 
