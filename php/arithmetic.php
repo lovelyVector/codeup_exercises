@@ -11,25 +11,81 @@
  * @version 0.0.1
  */
 
+
+
+
+
+
+
 /**
- * This function adds two numbers together
+ * This function adds two numbers together.
+ * 
+ * @param float $a The first number
+ * @param float $b The second number
  */
 function add($a, $b) {
     echo $a + $b;
 }
 
+add(1,1);
+
+
+
+
+
+
+
+
+
 /**
- * This function subtracks two numbers.
+ * This function subtracts two numbers.
+ *
+ * @param float $a The first number
+ * @param float $b The second number
  */
 function subtract($a, $b) {
     echo$a - $b;
 }
 
+
+
+
+
+/**
+ * This function multiplies two numbers.
+ *
+ * @param float $a The first number
+ * @param float $b The second number
+ */
 function multiply($a, $b) {
     echo $a * $b;
 }
 
+
+
+
+
+/**
+ * This function divides two numbers.
+ *
+ * @param float $a The first number
+ * @param float $b The second number
+ */
 function divide($a, $b) {
+    echo $a / $b;
+}
+
+
+
+
+
+/**
+ * This function take the modulus of two numbers.
+ *
+ * @param float $a The first number
+ * @param float $b The second number
+ */
+function modulus($a, $b) {
     echo $a / $b;
 }
 
