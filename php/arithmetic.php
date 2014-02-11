@@ -17,8 +17,10 @@
 
 
 
+
+
 /**
- * This function adds two numbers together.
+ * This function adds two numbers together. Both numbers must be numeric.
  * 
  * @param float $a The first number
  * @param float $b The second number
@@ -27,31 +29,17 @@ function add($a = null, $b = null) {
 
 	if ($a == null || $b == null) {
 		echo "Warning: Missing argument 2";
-		# code...
 	}
 	else{
-		echo $a + $b;
+		return $a + $b;
 	}
     
 }
 
-add(1,1);
-echo "\n";
-add(0.5,1);
-echo "\n";
-add(1);
-echo "\n";
-
-
-
-
-
-
-
 
 
 /**
- * This function subtracts two numbers.
+ * This function subtracts two numbers. Both arguments must be numeric.
  *
  * @param float $a The first number
  * @param float $b The second number
@@ -59,24 +47,16 @@ echo "\n";
 function subtract($a = null, $b = null) {
     if ($a == null || $b == null) {
 		echo "Warning: Missing argument 2";
-		# code...
 	}
 	else{
-		echo $a - $b;
+		return $a - $b;
 	}
 }
-
-subtract(1,1);
-echo "\n";
-subtract(0.5,1);
-echo "\n";
-subtract(1);
-echo "\n";
 
 
 
 /**
- * This function multiplies two numbers.
+ * This function multiplies two numbers. Both arguments should be numeric.
  *
  * @param float $a The first number
  * @param float $b The second number
@@ -84,7 +64,6 @@ echo "\n";
 function multiply($a = null, $b = null) {
     if ($a == null || $b == null) {
 		echo "Warning: Missing argument 2";
-		# code...
 	}
 	else{
 		echo $a * $b;
@@ -96,7 +75,7 @@ function multiply($a = null, $b = null) {
 
 
 /**
- * This function divides two numbers.
+ * This function divides two numbers. Both arguments should be numeric.
  *
  * @param float $a The first number
  * @param float $b The second number
@@ -104,14 +83,13 @@ function multiply($a = null, $b = null) {
 function divide($a = null, $b = null) {
     if ($a == null || $b == null) {
 		echo "Warning: Missing argument 2";
-		# code...
 	}
 	else{
 		if ($b = 0) {
 			echo "You are deviding by zero";
 		}
 		else{
-			echo $a / $b;
+			return $a / $b;
 		}
 		
 	}
@@ -122,7 +100,7 @@ function divide($a = null, $b = null) {
 
 
 /**
- * This function take the modulus of two numbers.
+ * This function take the modulus of two numbers. Both numbers should be numeric.
  *
  * @param float $a The first number
  * @param float $b The second number
@@ -130,10 +108,9 @@ function divide($a = null, $b = null) {
 function modulus($a = null, $b = null) {
     if ($a == null || $b == null) {
 		echo "Warning: Missing argument 2";
-		# code...
 	}
 	else{
-		echo $a % $b;
+		return $a % $b;
 	}
 }
 
