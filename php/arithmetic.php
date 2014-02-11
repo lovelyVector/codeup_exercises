@@ -23,11 +23,24 @@
  * @param float $a The first number
  * @param float $b The second number
  */
-function add($a, $b) {
-    echo $a + $b;
+function add($a = null, $b = null) {
+
+	if ($a == null || $b == null) {
+		echo "Warning: Missing argument 2";
+		# code...
+	}
+	else{
+		echo $a + $b;
+	}
+    
 }
 
 add(1,1);
+echo "\n";
+add(0.5,1);
+echo "\n";
+add(1);
+echo "\n";
 
 
 
@@ -43,11 +56,22 @@ add(1,1);
  * @param float $a The first number
  * @param float $b The second number
  */
-function subtract($a, $b) {
-    echo$a - $b;
+function subtract($a = null, $b = null) {
+    if ($a == null || $b == null) {
+		echo "Warning: Missing argument 2";
+		# code...
+	}
+	else{
+		echo $a - $b;
+	}
 }
 
-
+subtract(1,1);
+echo "\n";
+subtract(0.5,1);
+echo "\n";
+subtract(1);
+echo "\n";
 
 
 
@@ -57,8 +81,14 @@ function subtract($a, $b) {
  * @param float $a The first number
  * @param float $b The second number
  */
-function multiply($a, $b) {
-    echo $a * $b;
+function multiply($a = null, $b = null) {
+    if ($a == null || $b == null) {
+		echo "Warning: Missing argument 2";
+		# code...
+	}
+	else{
+		echo $a * $b;
+	}
 }
 
 
@@ -71,8 +101,14 @@ function multiply($a, $b) {
  * @param float $a The first number
  * @param float $b The second number
  */
-function divide($a, $b) {
-    echo $a / $b;
+function divide($a = null, $b = null) {
+    if ($a == null || $b == null) {
+		echo "Warning: Missing argument 2";
+		# code...
+	}
+	else{
+		echo $a / $b;
+	}
 }
 
 
@@ -85,8 +121,14 @@ function divide($a, $b) {
  * @param float $a The first number
  * @param float $b The second number
  */
-function modulus($a, $b) {
-    echo $a / $b;
+function modulus($a = null, $b = null) {
+    if ($a == null || $b == null) {
+		echo "Warning: Missing argument 2";
+		# code...
+	}
+	else{
+		echo $a % $b;
+	}
 }
 
 ?>
