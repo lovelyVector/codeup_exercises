@@ -8,6 +8,7 @@ do {
     // Iterate through list items
     foreach ($items as $key => $item) {
         // Display each item and a newline
+        $key = $key +1;
         echo "[{$key}] {$item}\n";
     }
 
@@ -17,6 +18,8 @@ do {
     // Get the input from user
     // Use trim() to remove whitespace and newlines
     $input = trim(fgets(STDIN));
+
+    $input = strtoupper($input);
 
     // Check for actionable input
     if ($input == 'N') {
