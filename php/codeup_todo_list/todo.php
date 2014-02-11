@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * todo.php
+ *
+ * This is a file to hold things.
+ *
+ * @package MyProject
+ * @subpackage Common
+ * @license http://opensource.org/licenses/MIT The MIT License
+ * @author Alexander A Guerra <lovelyVector@gmail.com>
+ * @version 0.0.1
+ */
+
 // Create array to hold list of todo items
 $items = array();
 
