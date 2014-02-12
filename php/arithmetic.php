@@ -16,7 +16,10 @@
 
 
 
-
+function validate($value='')
+{
+	# code...
+}
 
 
 /**
