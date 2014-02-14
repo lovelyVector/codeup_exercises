@@ -27,10 +27,6 @@
 //
 
 
-
-$items =[];
-
-
 function listItems($itemsToList){
 
     $stringToReturn = "";    // Make an empty string
@@ -41,7 +37,6 @@ function listItems($itemsToList){
     }
 
     Return $stringToReturn;
-
 }
 
 
@@ -49,6 +44,7 @@ function listItems($itemsToList){
 
 
 function getInput($upper = FALSE){
+
     $input = trim(fgets(STDIN));
 
     if($upper == true){
@@ -60,13 +56,17 @@ function getInput($upper = FALSE){
 }
 
 
+function returnFileContentsAsArray($filePath)
+{
+    $handle = fopen($filePath, "r");
+    $contents = fread($handle, filesize($filePath));
+    $contentsArray = explode("\n", $contents);
+    fclose($handle);
 
-
-
-
-function sortMenu(){
-    return;
+    return $contentsArray;   
 }
+
+
 
 
 
@@ -80,8 +80,8 @@ function exitProgram(){
 
 do{
     echo listItems($items);
-    echo '(N)ew item, (R)emove item, (S)ort, (Q)uit : ';
-
+    echo "(N)ew item, (R)emove item, (S)ort list,FIle (O)ptions, file (Q)uit : \n";
+    
     $input = getInput(true);
 
 
@@ -104,24 +104,33 @@ do{
             fwrite(STDOUT,  'Enter item: ');
             array_push($items,getInput());
         }
+    }
 
 
 
 
 
-    } elseif ($input == 'R') {
-        // Remove which item?
-        fwrite(STDOUT,'Enter item number to remove: ');
-        // Get array key
-        $key = getInput(false);
-        // Remove from array
-        unset($items[$key]);
+    elseif ($input == 'R') {
+        if(empty($items) == true){
+            fwrite(STDOUT, "The list is empty please add an item\n");
+        }
+
+        else{
+            // Remove which item?
+            fwrite(STDOUT,'Enter item number to remove: \n');
+            // Get array key
+            $key = getInput(false);
+            // Remove from array
+            unset($items[$key]);
+        }
+        
+        
     }
 
 
     elseif($input == 'S'){
         // Display seach options
-        fwrite(STDOUT,"(A)-Z, (Z)-A, (O)rder entered, (R)everse order entered");
+        fwrite(STDOUT,"(A)-Z, (Z)-A, (O)rder entered, (R)everse order entered\n");
 
         $sortTypeChoice = getInput(true);
 
@@ -139,15 +148,69 @@ do{
         }
     }
 
+
+
+
+
+
+
+
     elseif($input == 'F'){
         array_shift($items);
     }
+
+
+
+
+
+
+
 
     elseif($input == 'L'){
         array_pop($items);
     }
 
-}
+
+
+
+
+
+
+
+    elseif ($input == "O") {
+        fwrite(STDOUT, "(O)pen a file,(S)ave a file\n");
+        $fileMenu = getInput(true);
+
+        if($fileMenu == 'O'){
+            fwrite(STDOUT, "Enter the file to open...\n");
+            $filePath = getInput(false);
+
+            $contentsArray = returnFileContentsAsArray($filePath);
+
+            foreach ($contentsArray as $todo) {
+                array_push($items, $todo);
+            }
+        }
+    }
+
+
+
+
+
+
+        elseif ($filePath == 'S') {
+            
+
+            
+    
+
+        }   
+        
+
+    }
+
+
+
 while($input != 'Q');
 
 
