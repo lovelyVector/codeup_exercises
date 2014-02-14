@@ -99,19 +99,19 @@ exit(0);
 //
 //
 //
-//function list_items($list)
-//{
-//	// Make an empty string
-//	$stringToReturn = "";
-//
-//	// Run a for loop for each item in the $items array
-//	foreach ($list as $item => $value) {
-//		$item = $item + 1;
-//		$stringToReturn = $stringToReturn . "[{$item}] {$value}\n";
-//	}
-//
-//    Return $stringToReturn;
-//}
+function list_items($list)
+{
+	// Make an empty string
+	$stringToReturn = "";
+
+	// Run a for loop for each item in the $items array
+	foreach ($list as $item => $value) {
+		$item = $item + 1;
+		$stringToReturn = $stringToReturn . "[{$item}] {$value}\n";
+	}
+
+   Return $stringToReturn;
+}
 //
 //function get_input($upper = FALSE)
 //{
