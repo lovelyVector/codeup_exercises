@@ -1,31 +1,6 @@
 <?php
-/**
- * notes
- *
- * Created by PhpStorm.
- * User: lovelyVector
- * Date: 2/12/14
- * Time: 1:25 PM
- */
-//
-//require_once('vendor/autoload.php');
-//
-//$client = new Everyman\Neo4j\Client('krotus.sb01.stations.graphenedb.com', 24789);
-//$client->getTransport()
-//    ->setAuth('krotus', 'oBh7nnRM0Y8BzePSAaKt');
-//
-//print_r($client->getServerInfo());$items = [];
-//
-//$arthur = $client->makeNode();
-//
-//$arthur->setProperty('name', 'Arthur Dent')
-//    ->setProperty('mood', 'nervous')
-//    ->setProperty('home', 'small cottage')
-//    ->save();
-//
-//
-//
 
+$items = [];
 
 function listItems($itemsToList){
 
@@ -38,8 +13,6 @@ function listItems($itemsToList){
 
     Return $stringToReturn;
 }
-
-
 
 
 
@@ -66,6 +39,16 @@ function returnFileContentsAsArray($filePath)
     return $contentsArray;   
 }
 
+// function writeArrayToFile($filePath,$arrayToWrite){
+
+
+//     foreach ($arrayToWrite as $) {
+//         fwrite($handle, PHP_EOL . $city);
+//     }
+
+//     fclose($handle);
+// }
+
 
 
 
@@ -80,7 +63,7 @@ function exitProgram(){
 
 do{
     echo listItems($items);
-    echo "(N)ew item, (R)emove item, (S)ort list,FIle (O)ptions, file (Q)uit : \n";
+    echo "(N)ew item, (R)emove item, (S)ort list, File (O)ptions, (Q)uit : ";
     
     $input = getInput(true);
 
@@ -89,7 +72,7 @@ do{
     // Check for actionable input
     if ($input == 'N') {
 
-        fwrite(STDOUT,"Do you want the entry at the (b)eging or the (e)nd of the list?\n");
+        fwrite(STDOUT,"Do you want the entry at the (b)eging or the (e)nd of the list? ");
 
         $addEntryPosition = getInput(true);
 
@@ -117,7 +100,7 @@ do{
 
         else{
             // Remove which item?
-            fwrite(STDOUT,'Enter item number to remove: \n');
+            fwrite(STDOUT,'Enter item number to remove: ');
             // Get array key
             $key = getInput(false);
             // Remove from array
@@ -130,40 +113,36 @@ do{
 
     elseif($input == 'S'){
         // Display seach options
-        fwrite(STDOUT,"(A)-Z, (Z)-A, (O)rder entered, (R)everse order entered\n");
 
-        $sortTypeChoice = getInput(true);
-
-        if($sortTypeChoice == "A"){
-            sort($items);
-        }
-        elseif($sortTypeChoice == "Z"){
-            rsort($items);
-        }
-        elseif($sortTypeChoice == "O"){
-            asort($items);
+        if(empty($items) == true){
+            fwrite(STDOUT, "The list is empty please add an item.\n");
         }
         else{
-            arsort($items);
+
+
+            fwrite(STDOUT,"(A)-Z, (Z)-A, (O)rder entered, (R)everse order entered.");
+
+            $sortTypeChoice = getInput(true);
+
+            if($sortTypeChoice == "A"){
+                sort($items);
+            }
+            elseif($sortTypeChoice == "Z"){
+                rsort($items);
+            }
+            elseif($sortTypeChoice == "O"){
+                asort($items);
+            }
+            else{
+                arsort($items);
+            }
         }
     }
-
-
-
-
-
-
 
 
     elseif($input == 'F'){
         array_shift($items);
     }
-
-
-
-
-
-
 
 
     elseif($input == 'L'){
@@ -172,17 +151,12 @@ do{
 
 
 
-
-
-
-
-
     elseif ($input == "O") {
-        fwrite(STDOUT, "(O)pen a file,(S)ave a file\n");
+        fwrite(STDOUT, "(O)pen a file, (S)ave a file. ");
         $fileMenu = getInput(true);
 
         if($fileMenu == 'O'){
-            fwrite(STDOUT, "Enter the file to open...\n");
+            fwrite(STDOUT, "Enter the file to open... ");
             $filePath = getInput(false);
 
             $contentsArray = returnFileContentsAsArray($filePath);
@@ -191,27 +165,19 @@ do{
                 array_push($items, $todo);
             }
         }
+
+        elseif($fileMenu == 'S'){
+
+
+        }
     }
 
 
 
 
-
-
-        elseif ($filePath == 'S') {
-            
-
-            
-    
-
-        }   
         
 
-    }
-
-
-
-while($input != 'Q');
+}while($input != 'Q');
 
 
 exitProgram();
